@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="password_hyperlink"><a href="https://accounts.northeastern.edu/">Forgot my password</a></string>
+    <string name="tech_service_portal"><a href="https://service.northeastern.edu/tech">Visit the Tech Service Portal for 24/7 help.</a></string>
+</resources>

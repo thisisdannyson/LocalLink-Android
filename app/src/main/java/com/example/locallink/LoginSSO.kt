@@ -34,7 +34,11 @@ class LoginSSO : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_login_s_s_o, container, false)
         val signInButton: Button = view.findViewById(R.id.sso)
-        signInButton.setOnClickListener { createMockDialog() }
+        signInButton.setOnClickListener {
+            fragmentManager?.beginTransaction()
+                ?.replace(R.id.nav_container, NortheasternSSO())
+                ?.commit()
+        }
         return view
     }
 
