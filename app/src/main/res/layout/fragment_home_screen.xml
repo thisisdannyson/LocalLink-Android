@@ -11,8 +11,8 @@
         android:id="@+id/title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOCALLINK"
-        android:textColor="#E61C1C"
+        android:text="LOCAL LINK"
+        android:textColor="#130808"
         android:textSize="31sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,26 +24,44 @@
 
     <ImageView
         android:id="@+id/icon_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="#271A1A"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_text"
-        app:srcCompat="@drawable/ic_launcher_foreground"
+        app:srcCompat="@drawable/map_icon"
         tools:src="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/next_button"
+        android:id="@+id/join_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Go to Error Screen"
+        android:text="Join our Community"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icon_img" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/join_button"
+        android:text="OR"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/sign_in"/>
+
+    <Button
+        android:id="@+id/sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Sign In"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/join_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

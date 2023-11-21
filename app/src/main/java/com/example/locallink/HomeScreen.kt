@@ -1,7 +1,10 @@
 package com.example.locallink
 
+import android.app.AlertDialog
+import android.content.Context
+import android.content.SharedPreferences
+import android.content.SharedPreferences.Editor
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,25 +12,17 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.example.locallink.databinding.FragmentHomeScreenBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [HomeScreen.newInstance] factory method to
- * create an instance of this fragment.
- */
-
 
 class HomeScreen : Fragment() {
     private lateinit  var binding: FragmentHomeScreenBinding
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var editor: Editor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentHomeScreenBinding.inflate(layoutInflater)
-
+        sharedPreferences = context?.getSharedPreferences("myPref", Context.MODE_PRIVATE)!!
+        editor = sharedPreferences.edit()
 
     }
 
@@ -37,14 +32,37 @@ class HomeScreen : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home_screen, container, false)
-        val errorButton : Button = view.findViewById(R.id.next_button)
-        errorButton.setOnClickListener {
+        val signButton: Button = view.findViewById(R.id.sign_in)
+        val joinCommunityButton: Button = view.findViewById(R.id.join_button)
+        signButton.setOnClickListener {
+            if (sharedPreferences.getBoolean("login success", false)) {
+                fragmentManager?.beginTransaction()
+                    ?.replace(R.id.nav_container, MapScreen())
+                    ?.commit()
+            } else {
+                createErrorDialog()
+            }
+        }
+
+        joinCommunityButton.setOnClickListener {
             fragmentManager?.beginTransaction()
-                ?.replace(R.id.nav_container, ErrorLoginScreen())
+                ?.replace(R.id.nav_container, MapScreen())
                 ?.commit()
         }
 
         return view
+    }
+
+    private fun createErrorDialog() {
+        val builder: AlertDialog.Builder = AlertDialog.Builder(context)
+        builder.apply {
+            setTitle("Account Not Found")
+            setMessage("No Account with associated husky info found.")
+            setPositiveButton("Ok") { _, _ ->
+
+            }
+            show()
+        }
     }
 
 }
