@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreatingAccount.DisplayName">
+
+
+    <TextView
+        android:id="@+id/display_name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Name"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <TextView
+        android:id="@+id/display_name_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Type the name you wish to be known by"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/display_name_title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/display_name_title"
+        app:layout_constraintTop_toBottomOf="@+id/display_name_title"
+        app:layout_constraintVertical_bias="0.048" />
+
+    <EditText
+        android:id="@+id/display_name_text_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:hint="John Doe"
+        android:background="@drawable/edit_text_border"
+        app:layout_constraintEnd_toEndOf="@+id/display_name_subtitle"
+        app:layout_constraintStart_toStartOf="@+id/display_name_subtitle"
+        app:layout_constraintTop_toBottomOf="@+id/display_name_subtitle" />
+
+
+    <Button
+        android:id="@+id/display_name_next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/display_name_text_edit"
+        app:layout_constraintVertical_bias="0.136" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

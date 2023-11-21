@@ -10,11 +10,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.example.locallink.databinding.FragmentHomeScreenBinding
 
 
 class HomeScreen : Fragment() {
-    private lateinit  var binding: FragmentHomeScreenBinding
+    private lateinit var binding: FragmentHomeScreenBinding
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: Editor
 
@@ -23,6 +24,10 @@ class HomeScreen : Fragment() {
         binding = FragmentHomeScreenBinding.inflate(layoutInflater)
         sharedPreferences = context?.getSharedPreferences("myPref", Context.MODE_PRIVATE)!!
         editor = sharedPreferences.edit()
+
+        //editor.clear().commit() // -> only disable comment if u want to clear all preferences for testing purposes
+        (activity as AppCompatActivity?)!!.supportActionBar?.hide()
+
 
     }
 
@@ -35,7 +40,7 @@ class HomeScreen : Fragment() {
         val signButton: Button = view.findViewById(R.id.sign_in)
         val joinCommunityButton: Button = view.findViewById(R.id.join_button)
         signButton.setOnClickListener {
-            if (sharedPreferences.getBoolean("login success", false)) {
+            if (sharedPreferences.getBoolean("accountCreated", false)) {
                 fragmentManager?.beginTransaction()
                     ?.replace(R.id.nav_container, MapScreen())
                     ?.commit()
@@ -46,7 +51,7 @@ class HomeScreen : Fragment() {
 
         joinCommunityButton.setOnClickListener {
             fragmentManager?.beginTransaction()
-                ?.replace(R.id.nav_container, MapScreen())
+                ?.replace(R.id.nav_container, LoginSSO())
                 ?.commit()
         }
 

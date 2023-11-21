@@ -12,11 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        supportActionBar?.hide()
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.nav_container, HomeScreen())
             .commit()
-
     }
 }
