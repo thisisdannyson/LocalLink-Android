@@ -6,10 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".LoginSSO">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/login_sso_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Northeastern SSO"
@@ -23,7 +21,7 @@
         app:layout_constraintVertical_bias="0.373" />
 
     <TextView
-        android:id="@+id/subtitle"
+        android:id="@+id/login_sso_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Click to sign in with your husky info!"
@@ -33,11 +31,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/login_sso_title"
         app:layout_constraintVertical_bias="0.118" />
 
     <Button
-        android:id="@+id/sso"
+        android:id="@+id/login_sso_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
@@ -45,6 +43,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtitle" />
+        app:layout_constraintTop_toBottomOf="@+id/login_sso_subtitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

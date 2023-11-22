@@ -37,8 +37,8 @@ class HomeScreen : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home_screen, container, false)
-        val signButton: Button = view.findViewById(R.id.sign_in)
-        val joinCommunityButton: Button = view.findViewById(R.id.join_button)
+        val signButton: Button = view.findViewById(R.id.home_screen_sign_in_button)
+        val joinCommunityButton: Button = view.findViewById(R.id.home_screen_join_button)
         signButton.setOnClickListener {
             if (sharedPreferences.getBoolean("accountCreated", false)) {
                 fragmentManager?.beginTransaction()
