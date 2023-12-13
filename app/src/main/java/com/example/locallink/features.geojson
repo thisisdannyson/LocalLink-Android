@@ -1,0 +1,159 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ell Hall"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.088074,
+          42.339752
+        ],
+        "type": "Point"
+      },
+      "id": "0f20698fa3c3d56ee6cb8aff303c4586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ryder Hall"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.090626,
+          42.33659
+        ],
+        "type": "Point"
+      },
+      "id": "1b000b30a766cd196bc8354c0b34bd12"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Snell Engineering Center"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.08884,
+          42.338283
+        ],
+        "type": "Point"
+      },
+      "id": "2db23fa904df76479a044e111b30a650"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Forsyth Building"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.089581,
+          42.338569
+        ],
+        "type": "Point"
+      },
+      "id": "606a660a15b35598c01fc47723c9c433"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Richards Hall"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.088795,
+          42.339873
+        ],
+        "type": "Point"
+      },
+      "id": "64e805acf6cdcdf600413c9cc153dce1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ISEC"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.086942,
+          42.337695
+        ],
+        "type": "Point"
+      },
+      "id": "8549faa4659ad3150cfc309f5a292b03"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lake Hall"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.090726,
+          42.338202
+        ],
+        "type": "Point"
+      },
+      "id": "b9b1db74e894d8587d5ca6427687c33e"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Nightingale Hall"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.090128,
+          42.338129
+        ],
+        "type": "Point"
+      },
+      "id": "e72421962bdf7a1ad333cc0a83a34fde"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hayden Hall"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.08847,
+          42.339269
+        ],
+        "type": "Point"
+      },
+      "id": "f6aa93819b46c4f4428f389b117bb3dc"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "snell library"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.087972,
+          42.338412
+        ],
+        "type": "Point"
+      },
+      "id": "fce12941c1efa1b11bf37f6236ee6528"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Shillman Hall"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.090225,
+          42.337581
+        ],
+        "type": "Point"
+      },
+      "id": "fce6d1b1a683f742fecc15e71180290a"
+    }
+  ],
+  "type": "FeatureCollection"
+}

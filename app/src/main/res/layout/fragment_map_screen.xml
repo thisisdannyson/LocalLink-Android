@@ -6,19 +6,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MapScreen">
 
-    <TextView
-        android:id="@+id/map_screen_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Map Screen in Progress!"
-        android:textAlignment="center"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+
+    <com.mapbox.maps.MapView
+        android:id="@+id/mapViewScreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:mapbox_cameraTargetLat="42.339844"
+        app:mapbox_cameraTargetLng="-71.090275"
+        app:mapbox_cameraZoom="16.5"
+        app:mapbox_cameraPitch="10.0"
+        app:mapbox_cameraBearing="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.268" />
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapView_instruction"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#F4CD93"
+        android:background="#F4CD93"
+        android:text="Click on a building icon to \n enable/disable for search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapView_endSearchButton"
+        android:text="Search x Buildings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

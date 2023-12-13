@@ -24,6 +24,12 @@ class Biography : Fragment() {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
 
+    var pronounText: String = ""
+    var majorText: String = ""
+    var classesText: String = ""
+    var interestText: String = ""
+    var bioText: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedPreferences = context?.getSharedPreferences("myPref", Context.MODE_PRIVATE)!!
@@ -74,7 +80,13 @@ class Biography : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_biography, container, false)
         val nextButton: Button = view.findViewById(R.id.bio_next_button)
         val backButton: Button = view.findViewById(R.id.bio_back_button)
-        val nameEdit: EditText = view.findViewById(R.id.bio_info_text_edit)
+
+        //text edits for pronouns, major, classes, interest, and bio
+        val pronounsTextEdit: EditText = view.findViewById(R.id.bio_info_text_pronouns)
+        val majorTextEdit: EditText = view.findViewById(R.id.bio_info_text_major)
+        val classesTextEdit: EditText = view.findViewById(R.id.bio_info_text_edit_classes)
+        val interestsTextEdit: EditText = view.findViewById(R.id.bio_info_text_edit_interests)
+        val bioTextEdit: EditText = view.findViewById(R.id.bio_info_text_edit_bio)
 
         backButton.setOnClickListener {
             fragmentManager?.beginTransaction()
@@ -82,29 +94,80 @@ class Biography : Fragment() {
                 ?.commit()
         }
 
-        //val nameSharedPreferences = sharedPreferences.getString("displayName", "")
 
-        nameEdit.addTextChangedListener(object : TextWatcher {
+        bioTextEdit.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {
-
-                // you can call or do what you want with your EditText here
-
-                // yourEditText...
             }
 
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (s.isEmpty()) {
-                    nextButton.visibility = View.INVISIBLE
-                } else {
-                    nextButton.visibility = View.VISIBLE
-                }
+                bioText = s.toString()
+                nextButton.visibility =
+                    if (checkIfAllTextIsOpen()) View.VISIBLE else View.INVISIBLE
             }
         })
 
+        pronounsTextEdit.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                pronounText = s.toString()
+                nextButton.visibility =
+                    if (checkIfAllTextIsOpen()) View.VISIBLE else View.INVISIBLE
+            }
+        })
+
+        interestsTextEdit.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                interestText = s.toString()
+                nextButton.visibility =
+                    if (checkIfAllTextIsOpen()) View.VISIBLE else View.INVISIBLE
+
+            }
+        })
+
+        majorTextEdit.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                majorText = s.toString()
+                nextButton.visibility =
+                    if (checkIfAllTextIsOpen()) View.VISIBLE else View.INVISIBLE
+
+            }
+        })
+
+        classesTextEdit.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                classesText = s.toString()
+                nextButton.visibility =
+                    if (checkIfAllTextIsOpen()) View.VISIBLE else View.INVISIBLE
+
+            }
+        })
+
+
+
         nextButton.setOnClickListener {
-            val bio = nameEdit.text.toString()
-            editor.putString("biographyText", bio)
+            editor.apply {
+                putString("bioText", bioText)
+                putString("classesText", classesText)
+                putString("interestsText", interestText)
+                putString("majorText", majorText)
+                putString("pronounText", pronounText)
+            }
             editor.apply()
             fragmentManager?.beginTransaction()
                 ?.replace(R.id.nav_container, SelectProfilePhoto())
@@ -112,6 +175,14 @@ class Biography : Fragment() {
         }
         return view
 
+    }
+
+    private fun checkIfAllTextIsOpen(): Boolean {
+        return classesText.isNotEmpty() &&
+                bioText.isNotEmpty() &&
+                majorText.isNotEmpty() &&
+                interestText.isNotEmpty() &&
+                pronounText.isNotEmpty()
     }
 
 }
