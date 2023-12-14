@@ -24,6 +24,6 @@ We also have included a video demo of our interface in our drive that showcases 
 
 7. You may also click the 'running devices' button to launch the device. 
 
-<img width="300" alt="image" src="https://github.com/thisisdannyson/LocalLink-android/assets/113051313/7f3c2347-f419-410b-a341-b9dc086d4f86">
-<img width="400" alt="image" src="https://github.com/thisisdannyson/LocalLink-android/assets/113051313/eee2eb80-e3f6-4b1a-99f7-ff11efce9a67">
+<img width="600" alt="image" src="https://github.com/thisisdannyson/LocalLink-android/assets/113051313/7f3c2347-f419-410b-a341-b9dc086d4f86">
+<img width="200" alt="image" src="https://github.com/thisisdannyson/LocalLink-android/assets/113051313/eee2eb80-e3f6-4b1a-99f7-ff11efce9a67">
 
