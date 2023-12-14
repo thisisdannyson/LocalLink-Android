@@ -26,6 +26,7 @@ class SearchResults : Fragment() {
     private lateinit var editor: SharedPreferences.Editor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        BottomNav.mapFromSearchResults = true
         sharedPreferences = context?.getSharedPreferences("myPref", Context.MODE_PRIVATE)!!
         editor = sharedPreferences.edit()
 
@@ -37,18 +38,11 @@ class SearchResults : Fragment() {
     ): View? {
 
         val view: View = inflater.inflate(R.layout.fragment_search_results, container, false)
-        backToMapButton = view.findViewById(R.id.search_results_back_to_map)
         noStudentsText = view.findViewById(R.id.search_results_no_students_found)
         studentsFoundText = view.findViewById(R.id.search_results_studentsFoundNumber)
         studentsFoundInstructions = view.findViewById(R.id.search_results_studentsFoundInstructions)
         lineDivider = view.findViewById(R.id.search_results_divider_line)
         recyclerView = view.findViewById(R.id.search_results_recycler)
-
-        backToMapButton.setOnClickListener {
-            fragmentManager?.beginTransaction()
-                ?.replace(R.id.nav_container, MapScreen())
-                ?.commit()
-        }
 
         val usersAdapter = UserAdapter(UserDatabase.usersFoundinSearch,
             this,

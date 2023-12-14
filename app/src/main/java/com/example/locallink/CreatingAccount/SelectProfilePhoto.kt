@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.locallink.BottomNav
 import com.example.locallink.HomeScreen
 import com.example.locallink.R
 
@@ -113,7 +114,7 @@ class SelectProfilePhoto : Fragment() {
             }
             setPositiveButton("yes") { _, _ ->
                 fragmentManager?.beginTransaction()
-                    ?.replace(R.id.nav_container, HomeScreen())
+                    ?.replace(R.id.nav_container, HomeScreen(BottomNav.bottomNav))
                     ?.commit()
             }
             show()

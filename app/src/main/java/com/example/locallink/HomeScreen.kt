@@ -12,9 +12,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.locallink.databinding.FragmentHomeScreenBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
-class HomeScreen : Fragment() {
+class HomeScreen(private val bottomNav: BottomNavigationView) : Fragment() {
     private lateinit var binding: FragmentHomeScreenBinding
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: Editor
@@ -22,6 +23,7 @@ class HomeScreen : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentHomeScreenBinding.inflate(layoutInflater)
+        bottomNav.visibility = View.INVISIBLE
         sharedPreferences = context?.getSharedPreferences("myPref", Context.MODE_PRIVATE)!!
         editor = sharedPreferences.edit()
 
@@ -42,7 +44,7 @@ class HomeScreen : Fragment() {
         signButton.setOnClickListener {
             if (sharedPreferences.getBoolean("accountCreated", false)) {
                 fragmentManager?.beginTransaction()
-                    ?.replace(R.id.nav_container, MapScreen())
+                    ?.replace(R.id.nav_container, MapScreen(bottomNav))
                     ?.commit()
             } else {
                 createErrorDialog()

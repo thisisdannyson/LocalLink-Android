@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CreatingAccount.ProfileScreen">
+
+
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="Name"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+    <ImageView
+        android:id="@+id/profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:textAlignment="center"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/default_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_name"/>
+
+    <TextView
+        android:id="@+id/profile_location_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_image"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:text="Location: "
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/profile_location_body"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/profile_location_title"
+        app:layout_constraintTop_toBottomOf="@id/profile_image"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        tools:text="Hayden Hall"
+        android:textSize="16sp"
+        android:textColor="#5C5C5C"/>
+
+
+    <TextView
+        android:id="@+id/profile_pronoun_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_location_body"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:text="Pronouns: "
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/profile_pronoun_body"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/profile_pronoun_title"
+        app:layout_constraintTop_toBottomOf="@id/profile_location_body"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        tools:text="He/Him"
+        android:textSize="16sp"
+        android:textColor="#5C5C5C"/>
+
+    <TextView
+        android:id="@+id/profile_major_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_pronoun_title"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:text="Major:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/profile_major_body"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/profile_major_title"
+        app:layout_constraintTop_toBottomOf="@id/profile_pronoun_title"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:text="Computer Science and Game Dev"
+        android:textSize="16sp"
+        android:textColor="#5C5C5C"/>
+
+    <TextView
+        android:id="@+id/profile_classes_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_major_body"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:text="Classes:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/profile_classes_body"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/profile_classes_title"
+        app:layout_constraintTop_toBottomOf="@id/profile_major_body"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        tools:text="HCI, Computer Graphics, turkey jerky jaiosdjoaidjiao daa oisdjao djaio d"
+        android:textSize="16sp"
+        android:textColor="#5C5C5C"/>
+
+
+    <TextView
+        android:id="@+id/profile_interests_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_classes_body"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:text="Interests:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/profile_interests_body"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/profile_interests_title"
+        app:layout_constraintTop_toBottomOf="@id/profile_classes_body"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        tools:text="Hiking, Cooking, Climbing"
+        android:textSize="16sp"
+        android:textColor="#5C5C5C"/>
+
+    <TextView
+        android:id="@+id/profile_bio_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_interests_body"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:text="Bio:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/profile_bio_body"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/profile_bio_title"
+        app:layout_constraintTop_toBottomOf="@id/profile_interests_body"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        tools:text="Looking for some friends to study at in Snell Library!"
+        android:textSize="16sp"
+        android:textColor="#5C5C5C"/>
+
+    <Button
+        android:id="@+id/profile_logout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_bio_body"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

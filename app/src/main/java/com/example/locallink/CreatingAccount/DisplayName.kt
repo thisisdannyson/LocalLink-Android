@@ -16,6 +16,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.locallink.BottomNav
 import com.example.locallink.HomeScreen
 import com.example.locallink.R
 import com.mapbox.geojson.Feature
@@ -80,7 +81,7 @@ class DisplayName : Fragment() {
 
         nextButton.setOnClickListener {
             val name = nameEdit.text.toString()
-            editor.putString("displayName", name)
+            editor.putString("profileName", name)
             editor.apply()
             fragmentManager?.beginTransaction()
                 ?.replace(R.id.nav_container, Biography())
@@ -100,7 +101,7 @@ class DisplayName : Fragment() {
             }
             setPositiveButton("yes") { _, _ ->
                 fragmentManager?.beginTransaction()
-                    ?.replace(R.id.nav_container, HomeScreen())
+                    ?.replace(R.id.nav_container, HomeScreen(BottomNav.bottomNav))
                     ?.commit()
             }
             show()

@@ -16,6 +16,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.locallink.BottomNav
 import com.example.locallink.HomeScreen
 import com.example.locallink.R
 
@@ -65,7 +66,7 @@ class Biography : Fragment() {
             }
             setPositiveButton("yes") { _, _ ->
                 fragmentManager?.beginTransaction()
-                    ?.replace(R.id.nav_container, HomeScreen())
+                    ?.replace(R.id.nav_container, HomeScreen(BottomNav.bottomNav))
                     ?.commit()
             }
             show()
@@ -162,11 +163,12 @@ class Biography : Fragment() {
 
         nextButton.setOnClickListener {
             editor.apply {
-                putString("bioText", bioText)
-                putString("classesText", classesText)
-                putString("interestsText", interestText)
-                putString("majorText", majorText)
-                putString("pronounText", pronounText)
+                putString("profileBio", bioText)
+                putString("profileClasses", classesText)
+                putString("profileInterests", interestText)
+                putString("profileMajor", majorText)
+                putString("profilePronouns", pronounText)
+                putString("profileLocation", "Hayden Hall")
             }
             editor.apply()
             fragmentManager?.beginTransaction()

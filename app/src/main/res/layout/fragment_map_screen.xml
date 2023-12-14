@@ -60,6 +60,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/mapView_endSearchButton"
         android:text="Search x Buildings"
+        android:layout_marginBottom="70dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

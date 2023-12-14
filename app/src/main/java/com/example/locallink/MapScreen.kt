@@ -20,6 +20,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.widget.SwitchCompat
 import com.example.locallink.CreatingAccount.Biography
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mapbox.geojson.Point
 import com.mapbox.maps.MapView
 import com.mapbox.maps.plugin.annotation.AnnotationOptions
@@ -31,7 +32,7 @@ import com.mapbox.maps.plugin.annotation.generated.createPointAnnotationManager
 import com.mapbox.maps.viewannotation.viewAnnotationOptions
 import java.util.HashSet
 
-class MapScreen : Fragment() {
+class MapScreen(private val bottomNav: BottomNavigationView) : Fragment() {
     private lateinit var coordToBuildingNamePairs: List<Pair<String,Point>>
     private lateinit var options: List<PointAnnotationOptions>
     private var buildingSet: MutableSet<String> = HashSet()// set of strings to determine whether we
@@ -47,6 +48,8 @@ class MapScreen : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        bottomNav.visibility = View.VISIBLE
+        bottomNav.selectedItemId = R.id.menu_map
         sharedPreferences = context?.getSharedPreferences("myPref", Context.MODE_PRIVATE)!!
         editor = sharedPreferences.edit()
     }
