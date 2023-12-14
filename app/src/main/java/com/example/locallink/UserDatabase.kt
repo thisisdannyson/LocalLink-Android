@@ -1,5 +1,7 @@
 package com.example.locallink
 
+import android.content.SharedPreferences
+
 class UserDatabase {
     companion object {
         var users: MutableList<User> = generateUsers()
@@ -8,6 +10,10 @@ class UserDatabase {
         var usersFoundinSearch: MutableList<User> = mutableListOf()
         var numUsersFound: Int = 0
 
+
+        var usersAdded: MutableList<User> = mutableListOf()
+        var userIdMap: MutableMap<String, User> = mutableMapOf()
+
         fun init(set: Set<String>) {
             numUsersFound = 0
             generateUsers()
@@ -15,6 +21,23 @@ class UserDatabase {
             generateLocalMapToBuilding(set)
             calculateNumUsers()
             generateUsersInSearch()
+            generateUserIdMap()
+        }
+
+        private fun generateUserIdMap() {
+            userIdMap = mutableMapOf()
+            for (user in users) {
+                userIdMap[user.userId] = user
+            }
+        }
+
+        fun generateUsersInSearch(sharedPreferences: SharedPreferences) {
+            usersAdded = mutableListOf()
+            for (user in users) {
+                if (sharedPreferences.contains(user.userId)) {
+                    usersAdded.add(user)
+                }
+            }
         }
 
         private fun generateUsersInSearch() {

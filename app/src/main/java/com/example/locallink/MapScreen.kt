@@ -201,6 +201,17 @@ class MapScreen(private val bottomNav: BottomNavigationView) : Fragment() {
             Pair("Lake Hall", Point.fromLngLat(-71.090726, 42.338202)),
             Pair("Nightingale Hall", Point.fromLngLat(-71.090128,42.338129)),
             Pair("Meserve Hall" , Point.fromLngLat(-71.09086393160773, 42.337653988383835)),
+            Pair("Behrakis Health Science Center", Point.fromLngLat(-71.09152151335596, 42.33695568964913)),
+            Pair("Cargill Hall", Point.fromLngLat(-71.09160548796162, 42.338952474689165)),
+            Pair("Stearns Center", Point.fromLngLat(-71.09139282195547, 42.33904000480399)),
+            Pair("Kariotis Hall", Point.fromLngLat(-71.09087365147718, 42.338647343614554)),
+            Pair("Cabot Physical Education Center", Point.fromLngLat(-71.08971301218136, 42.33941142175959)),
+            Pair("Dodge Hall", Point.fromLngLat(-71.08777378457647, 42.34021090057888)),
+            Pair("Mugar Life Sciences Building", Point.fromLngLat( -71.08712611991956, 42.33980005153151)),
+            Pair("West Village F", Point.fromLngLat(-71.09149353103591, 42.337552752335085)),
+            Pair("Robinson Hall", Point.fromLngLat( -71.08670863877933, 42.339292305451806)),
+            Pair("Cullinane Hall", Point.fromLngLat(-71.08653222265981, 42.34010686230749)),
+            Pair("Hurtig Hall", Point.fromLngLat(-71.08616247380738, 42.3397924731928)),
 
         )
         return res
@@ -214,7 +225,7 @@ class MapScreen(private val bottomNav: BottomNavigationView) : Fragment() {
                 .withIconImage(icon)
                 .withTextField(pair.first)
                 .withTextColor(Color.BLACK)
-                .withTextSize(10.0)
+                .withTextSize(12.0)
                 .withTextOffset(listOf(0.0, -3.0))
             res.add(pointAnnotationOption)
         }

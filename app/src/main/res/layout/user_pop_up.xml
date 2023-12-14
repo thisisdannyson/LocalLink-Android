@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="250dp"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="#3CF4CD93"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -193,24 +193,13 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/user_popup_bio_title"
         app:layout_constraintTop_toBottomOf="@id/user_popup_interests_body"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="18dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="12dp"
         tools:text="Looking for some friends to study at in Snell Library!"
         android:textSize="16sp"
         android:textColor="#5C5C5C"/>
-
-    <Button
-        android:id="@+id/user_popup_chat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chat"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="18dp"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user_popup_bio_body"
-        app:layout_constraintVertical_bias="0.204" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

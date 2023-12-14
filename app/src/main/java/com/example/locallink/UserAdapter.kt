@@ -20,14 +20,14 @@ class UserAdapter(private val list: MutableList<User>,
                   private val editor: SharedPreferences.Editor): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var chatButton: Button
+        var connectButton: Button
         var viewMoreButton: Button
         var bioText: TextView
         var majorText: TextView
         var name: TextView
 
         init {
-            chatButton = itemView.findViewById(R.id.user_chat_button)
+            connectButton = itemView.findViewById(R.id.user_connect_button)
             viewMoreButton = itemView.findViewById(R.id.user_view_more_button)
             bioText = itemView.findViewById(R.id.user_bio_body)
             majorText = itemView.findViewById(R.id.user_major_body)
@@ -47,8 +47,8 @@ class UserAdapter(private val list: MutableList<User>,
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         var text = list[position].bio
-        if (text.length >= 39) {
-            text = text.substring(0,39) + "..."
+        if (text.length >= 38) {
+            text = text.substring(0,38) + "..."
         }
         holder.bioText.text = text
         holder.majorText.text = list[position].major
@@ -56,8 +56,18 @@ class UserAdapter(private val list: MutableList<User>,
         holder.viewMoreButton.setOnClickListener {
            displayPopUp(position)
         }
-        holder.chatButton.setOnClickListener {
-            // move to chat with user
+        holder.connectButton.isClickable = true
+        if (sharedPreferences.contains(list[position].userId)) {
+            holder.connectButton.text = "Added"
+            holder.connectButton.alpha = 0.5f;
+            holder.connectButton.isClickable = false
+        }
+        holder.connectButton.setOnClickListener {
+            editor.putBoolean(list[position].userId, true)
+            editor.commit()
+            holder.connectButton.text = "Added"
+            holder.connectButton.isClickable = false
+            holder.connectButton.alpha = 0.5f
         }
 
     }
@@ -75,10 +85,6 @@ class UserAdapter(private val list: MutableList<User>,
         val interestsText: TextView = view.findViewById(R.id.user_popup_interests_body)
         val bioText: TextView = view.findViewById(R.id.user_popup_bio_body)
 
-        val chatButton: Button = view.findViewById(R.id.user_popup_chat)
-        chatButton.setOnClickListener {
-            //nav to chat screen
-        }
 
         nameText.text = list[position].name
         pronounText.text = list[position].pronouns

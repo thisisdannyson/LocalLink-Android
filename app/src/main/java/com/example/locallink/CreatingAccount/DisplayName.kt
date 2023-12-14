@@ -30,6 +30,7 @@ class DisplayName : Fragment() {
         super.onCreate(savedInstanceState)
         sharedPreferences = context?.getSharedPreferences("myPref", Context.MODE_PRIVATE)!!
         editor = sharedPreferences.edit()
+        editor.clear().commit()
         setHasOptionsMenu(true)
 
 

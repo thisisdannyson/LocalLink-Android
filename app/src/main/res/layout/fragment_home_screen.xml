@@ -33,16 +33,25 @@
         app:layout_constraintTop_toBottomOf="@+id/home_screen_title_text"
         app:srcCompat="@drawable/map_icon"
         tools:src="@tools:sample/avatars" />
+    <TextView
+        android:id="@+id/home_screen_text_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_screen_icon_img"
+        android:text="Connect with Students Nearby!"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/home_screen_join_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="46dp"
         android:text="Join our Community"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_screen_icon_img" />
+        app:layout_constraintTop_toBottomOf="@+id/home_screen_text_body" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
