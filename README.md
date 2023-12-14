@@ -20,5 +20,9 @@ We also have included a video demo of our interface in our drive that showcases 
 <img width="300" alt="Screenshot 2023-12-14 at 10 45 57 AM" src="https://github.com/thisisdannyson/LocalLink-android/assets/97973698/6ee61e29-6d81-402a-b1d7-3df69c3939d6">
 
 5. click on the green triangle to run the app, and you should see an emulator running on a separate tab
+6. You may also click the 'running devices' button to launch the device. 
+
+<img width="300" alt="image" src="https://github.com/thisisdannyson/LocalLink-android/assets/113051313/7f3c2347-f419-410b-a341-b9dc086d4f86">
+<img width="179" alt="image" src="https://github.com/thisisdannyson/LocalLink-android/assets/113051313/eee2eb80-e3f6-4b1a-99f7-ff11efce9a67">
 
 <img width="500" alt="Screenshot 2023-11-20 at 9 53 19 PM" src="https://github.com/thisisdannyson/LocalLink-android/assets/97973698/84a6efdc-694e-44c5-8fb6-04ef3137ffa5">
