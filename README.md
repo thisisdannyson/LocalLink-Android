@@ -17,8 +17,8 @@ We also have included a video demo of our interface in our drive that showcases 
 <img width="700" alt="Screenshot 2023-11-20 at 9 49 49 PM" src="https://github.com/thisisdannyson/LocalLink-android/assets/97973698/9ff87053-d839-4c7c-9ba6-cf8b473a17a1">
 
 4. If you cloned this repo recently, you want to sync your gradle files with this project
-<img width="400" alt="Screenshot 2023-12-14 at 10 45 57 AM" src="https://github.com/thisisdannyson/LocalLink-android/assets/97973698/6ee61e29-6d81-402a-b1d7-3df69c3939d6">
+<img width="300" alt="Screenshot 2023-12-14 at 10 45 57 AM" src="https://github.com/thisisdannyson/LocalLink-android/assets/97973698/6ee61e29-6d81-402a-b1d7-3df69c3939d6">
 
 5. click on the green triangle to run the app, and you should see an emulator running on a separate tab
 
-<img width="600" alt="Screenshot 2023-11-20 at 9 53 19 PM" src="https://github.com/thisisdannyson/LocalLink-android/assets/97973698/84a6efdc-694e-44c5-8fb6-04ef3137ffa5">
+<img width="500" alt="Screenshot 2023-11-20 at 9 53 19 PM" src="https://github.com/thisisdannyson/LocalLink-android/assets/97973698/84a6efdc-694e-44c5-8fb6-04ef3137ffa5">
