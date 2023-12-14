@@ -3,14 +3,8 @@ package com.example.locallink
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.locallink.CreatingAccount.ProfileScreen
 import com.example.locallink.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.mapbox.geojson.Point
-import com.mapbox.maps.CameraOptions
-import com.mapbox.maps.MapView
-import com.mapbox.maps.plugin.Plugin
-import java.util.prefs.Preferences
 
 class MainActivity : AppCompatActivity() {
 

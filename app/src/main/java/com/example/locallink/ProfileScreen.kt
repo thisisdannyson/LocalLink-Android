@@ -1,4 +1,4 @@
-package com.example.locallink.CreatingAccount
+package com.example.locallink
 
 import android.app.AlertDialog
 import android.content.Context
@@ -10,11 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import com.example.locallink.BottomNav
-import com.example.locallink.HomeScreen
-import com.example.locallink.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import org.w3c.dom.Text
 
 class ProfileScreen(private val bottomNav: BottomNavigationView) : Fragment() {
     private lateinit var name: TextView
@@ -68,7 +64,7 @@ class ProfileScreen(private val bottomNav: BottomNavigationView) : Fragment() {
         val builder: AlertDialog.Builder = AlertDialog.Builder(context)
         builder.apply {
             setTitle("Logging out")
-            setMessage("${name.text}, are you sure you want to logout?")
+            setMessage("Are you sure you want to logout?")
             setNegativeButton("no") {_, _ ->
 
             }

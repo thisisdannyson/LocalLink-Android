@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class SearchResults : Fragment() {
 
-    private lateinit var backToMapButton: Button
     private lateinit var noStudentsText: TextView
     private lateinit var studentsFoundText: TextView
     private lateinit var studentsFoundInstructions: TextView

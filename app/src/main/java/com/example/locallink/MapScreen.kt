@@ -79,7 +79,6 @@ class MapScreen(private val bottomNav: BottomNavigationView) : Fragment() {
         }
         pointAnnotationManager.addClickListener(OnPointAnnotationClickListener { annotation ->
             val name =  annotation.textField.toString()
-            Log.i("testing", "name building is $name")
             displayPopup(name)
             true
         })
@@ -91,7 +90,6 @@ class MapScreen(private val bottomNav: BottomNavigationView) : Fragment() {
                 ?.replace(R.id.nav_container, SearchResults())
                 ?.commit()
         }
-        Log.i("user", "size of user database: ${UserDatabase.users.size}")
 
         val icon: Bitmap = convertDrawableToBitMap(resources.getDrawable(R.drawable.ic_building))!!
         coordToBuildingNamePairs = generatePairs()
@@ -181,7 +179,6 @@ class MapScreen(private val bottomNav: BottomNavigationView) : Fragment() {
     private fun generateSet() {
         for (pair in coordToBuildingNamePairs) {
             if (sharedPreferences.contains(pair.first)) {
-                Log.i("mapGenerate", "adding ${pair.first} to set!")
                 buildingSet.add(pair.first)
             }
         }
