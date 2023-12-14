@@ -31,11 +31,6 @@ import com.mapbox.maps.plugin.annotation.generated.createPointAnnotationManager
 import com.mapbox.maps.viewannotation.viewAnnotationOptions
 import java.util.HashSet
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MapScreen.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MapScreen : Fragment() {
     private lateinit var coordToBuildingNamePairs: List<Pair<String,Point>>
     private lateinit var options: List<PointAnnotationOptions>

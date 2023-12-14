@@ -5,11 +5,31 @@ class UserDatabase {
         var users: MutableList<User> = generateUsers()
         var localUserMapToBuilding: MutableMap<String, MutableList<User>> = mutableMapOf()
         var generalUserMapToBuilding: MutableMap<String, MutableList<User>> = mutableMapOf()
+        var usersFoundinSearch: MutableList<User> = mutableListOf()
+        var numUsersFound: Int = 0
 
         fun init(set: Set<String>) {
+            numUsersFound = 0
             generateUsers()
             generateGeneralMapToBuilding()
             generateLocalMapToBuilding(set)
+            calculateNumUsers()
+            generateUsersInSearch()
+        }
+
+        private fun generateUsersInSearch() {
+            usersFoundinSearch = mutableListOf()
+            for (building in localUserMapToBuilding) {
+                for (user in localUserMapToBuilding[building.key]!!) {
+                    usersFoundinSearch.add(user)
+                }
+            }
+        }
+
+        private fun calculateNumUsers() {
+            for (building in localUserMapToBuilding) {
+                numUsersFound += localUserMapToBuilding[building.key]!!.size
+            }
         }
 
         private fun generateLocalMapToBuilding(set: Set<String>) {
@@ -37,7 +57,8 @@ class UserDatabase {
                 "Computer Science & Game Development",
                 "HCI, Computer Graphics, Game Capstone",
                 "Lifting, hiking, biking, guitar",
-                "Looking for a study buddy to help me prepare for my graphics exam!"))
+                "Looking for a study buddy to help me prepare for my graphics exam!",
+                "U_5"))
             result.add(User("Johnny",
                 "Snell Library",
                 "He/Him",
@@ -45,6 +66,7 @@ class UserDatabase {
                 "Computer Graphics, Advanced Writing",
                 "Competitive Programming, Cooking, Climbing",
                 "Trying to meet other Northeastern students that want to grab a coffee with me!",
+                "U_4"
                 ))
             result.add(User("Maria",
                 "ISEC",
@@ -53,6 +75,7 @@ class UserDatabase {
                 "Foundations of Data Science, HCI, Information Retrieval",
                 "Playing with my cat, Reading",
                 "Hey, I'm Maria! I'm looking to make some new friends that want to join a cat cafe with me!",
+                "U_3"
             ))
             result.add(User("Chad",
                 "ISEC",
@@ -61,6 +84,7 @@ class UserDatabase {
                 "Biochemistry, Biology Capstone",
                 "Concerts, Volleyball",
                 "Hello, looking for someone to get lunch with me at IV",
+                "U_2"
             ))
             result.add(User("Alia",
                 "Ryder Hall",
@@ -69,6 +93,7 @@ class UserDatabase {
                 "Object Oriented Programming, Graphic Design 2",
                 "Writing, Drawing, Reading",
                 "Hello, new to Boston, looking for students to connect with and explore around!",
+                "U_1"
             ))
 
             return result
@@ -83,5 +108,6 @@ class User constructor(val name: String,
                        val major: String,
                        val classes: String,
                        val interests: String,
-                       val bio: String) {
+                       val bio: String,
+                       val userId: String) {
 }
