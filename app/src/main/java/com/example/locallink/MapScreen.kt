@@ -19,6 +19,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.widget.SwitchCompat
+import com.example.locallink.CreatingAccount.Biography
 import com.mapbox.geojson.Point
 import com.mapbox.maps.MapView
 import com.mapbox.maps.plugin.annotation.AnnotationOptions
@@ -45,6 +46,8 @@ class MapScreen : Fragment() {
     private lateinit var editor: SharedPreferences.Editor
 
     private lateinit var searchButton: Button
+    private lateinit var clearButton: Button
+    private lateinit var addAllButton: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,14 +66,34 @@ class MapScreen : Fragment() {
         mapView = view.findViewById(R.id.mapViewScreen)
         val annotationApi = mapView.annotations
         val pointAnnotationManager = annotationApi.createPointAnnotationManager()
+
+
         searchButton = view.findViewById(R.id.mapView_endSearchButton)
+        clearButton = view.findViewById(R.id.mapView_resetSearch)
+        addAllButton = view.findViewById(R.id.mapView_addAllSearchButton)
+
+        clearButton.setOnClickListener {
+            clearBuildings()
+        }
+
+        addAllButton.setOnClickListener {
+           addAllBuildings()
+        }
         pointAnnotationManager.addClickListener(OnPointAnnotationClickListener { annotation ->
             val name =  annotation.textField.toString()
             Log.i("testing", "name building is $name")
             displayPopup(name)
-
             true
         })
+
+
+        searchButton.setOnClickListener {
+            UserDatabase.init(buildingSet)
+            fragmentManager?.beginTransaction()
+                ?.replace(R.id.nav_container, SearchResults())
+                ?.commit()
+        }
+        Log.i("user", "size of user database: ${UserDatabase.users.size}")
 
         val icon: Bitmap = convertDrawableToBitMap(resources.getDrawable(R.drawable.ic_building))!!
         coordToBuildingNamePairs = generatePairs()
@@ -80,6 +103,24 @@ class MapScreen : Fragment() {
         generateSet()
         checkToViewButton()
         return view
+    }
+
+    private fun clearBuildings() {
+        for (pair in coordToBuildingNamePairs) {
+            editor.remove(pair.first)
+        }
+        editor.commit()
+        buildingSet.clear()
+        searchButton.visibility = View.INVISIBLE
+    }
+
+    private fun addAllBuildings() {
+        for (pair in coordToBuildingNamePairs) {
+            buildingSet.add(pair.first)
+            editor.putBoolean(pair.first, true)
+        }
+        editor.commit()
+        enableSearchButton()
     }
 
     private fun checkToViewButton() {
