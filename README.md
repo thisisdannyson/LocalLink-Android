@@ -7,6 +7,8 @@ Members: Shreya Modi, Danny Son
 This repo contains our digital interface which is an Android app in hopes of reducing loneliness for Northeastern Students
 We used Android Studio to create the interface mainly consisting of XML files that contain all the UI for each of our screens, then wiring all the logic in each screen written in Kotlin
 
+We also have included a video demo of our interface in our drive that showcases all the tasks we outlined. 
+
 ## Setup Instructions
 1. Download Android Studio https://developer.android.com/studio (we will use an emulator to test the app) -> no additional configurations are needed when downloading, all the default options should be fine when selecting
 2. Clone this repo and load the project once Android Studio is downloaded (may take a couple of minutes to load/download everything)
